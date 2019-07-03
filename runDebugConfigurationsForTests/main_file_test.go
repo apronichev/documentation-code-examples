@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -10,10 +9,10 @@ func CalculateMulitplyTwo(x int) (result int) {
 	return result
 }
 
-func main() {
-	result := CalculateMulitplyTwo(4)
-	fmt.Println(result)
-}
+//func main() {
+//	result := CalculateMulitplyTwo(4)
+//	fmt.Println(result)
+//}
 
 func TestMultiplyTable(t *testing.T) {
 	tests := []struct {
@@ -33,7 +32,7 @@ func TestMultiplyTable(t *testing.T) {
 	}
 }
 func TestMultiply(t *testing.T) {
-	if CalculateMulitplyTwo(0) != 2 {
+	if CalculateMulitplyTwo(0) != 0 {
 		t.Error("Failed")
 	}
 }

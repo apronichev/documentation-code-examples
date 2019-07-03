@@ -12,7 +12,7 @@ func TestMultiplyTable(t *testing.T) {
 		{4, 2},
 		{12, 6},
 		{-4, -2},
-		{19998, 9998},
+		{19998, 9999},
 		{6, 3},
 	}
 	for _, tt := range tests {
@@ -22,7 +22,7 @@ func TestMultiplyTable(t *testing.T) {
 	}
 }
 func TestMultiply(t *testing.T) {
-	if CalculateDivisionTwo(0) != 1 {
+	if CalculateDivisionTwo(0) != 0 {
 		t.Error("PackageTest: Failed")
 	}
 }

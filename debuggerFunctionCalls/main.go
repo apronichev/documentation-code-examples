@@ -17,9 +17,9 @@ func main() {
 	// FuncOneResult(), t.MethodOneResult() - the result of function or method is shown
 	// t.MethodManyUnnamedResults() - ~r0, ~r1, ... are used as return value names
 	// t.MethodManyNamedResults() - return value names specified in function signature are used
-	// t.MethodNoResults() - result is undefined since function doesn't return anything
+	// t.MethodNoResults() - result is undefined since function returns nothing
 	// Panic(false) - the argument to the panic() call is shown as a result
-	// Factorial(10, true) - notice that evaluation doesn't stop at breakpoints inside the evaluated function
+	// Factorial(10, true) - evaluation doesn't stop at breakpoints inside the evaluated function
 	// UnusedFunc(), t.UnusedMethod() - evaluation fails, the error explains that unused function/method are not included into executable
 	println("ok")
 }

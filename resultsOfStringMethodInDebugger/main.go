@@ -24,5 +24,7 @@ func main() {
 		email:   "john.smith@example.com",
 		company: Company{name: "ACME"},
 	}
+	// Place a breakpoint on the following println function, run a debugging session.
+	// See how the result is displayed in the Debug tool window (the Variables pane).
 	println(u.String())
 }

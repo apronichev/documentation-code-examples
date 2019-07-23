@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{- /*gotype: goTemplates.UsersPage*/ -}}
+        {{.Title}}</title>
+</head>
+<body>
+{{range .Users}}
+    <div>Username: {{.Username}} </div>
+    <div>Location: {{.Locations.Home.Street}}</div>
+{{else}}
+    <div>No users found</div>
+{{end}}
+</body>
+</html>

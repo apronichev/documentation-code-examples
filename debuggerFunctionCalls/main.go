@@ -1,6 +1,10 @@
 package main
 
-import "runtime"
+import (
+	"fmt"
+	"math/cmplx"
+	"runtime"
+)
 
 // to check function calls in debugger, debug the main function (breakpoints are set programmatically)
 func main() {
@@ -56,14 +60,27 @@ func FuncOneResult() string {
 	return "ok"
 }
 
+func toPowerPlusTwo() int {
+	var (
+		ToBe   bool       = false
+		MaxInt uint64     = 1<<64 - 1
+		z      complex128 = cmplx.Sqrt(-5 + 12i)
+		n      int        = 2
+	)
+
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v\n", z, z)
+	return n
+}
+
 func Factorial(n int, withBreak bool) int {
 	if withBreak {
-		runtime.Breakpoint()
 	}
 	if n == 0 {
 		return 1
 	} else {
-		return n * Factorial(n - 1, withBreak)
+		return n * Factorial(n-1, withBreak)
 	}
 }
 

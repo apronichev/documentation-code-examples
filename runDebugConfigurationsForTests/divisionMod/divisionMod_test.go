@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestMultiplyTable(t *testing.T) {
+func TestCalculateDivisionTwoTable(t *testing.T) {
 	tests := []struct {
 		input      int
 		wantResult int
@@ -21,7 +21,7 @@ func TestMultiplyTable(t *testing.T) {
 		}
 	}
 }
-func TestMultiply(t *testing.T) {
+func TestCalculateDivisionTwo(t *testing.T) {
 	if CalculateDivisionTwo(0) != 0 {
 		t.Error("PackageTest: Failed")
 	}

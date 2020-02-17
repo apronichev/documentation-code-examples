@@ -9,7 +9,7 @@ func TestCalculateTable(t *testing.T) {
 	}{
 		{2, 4},
 		{6, 8},
-		{-2, 0},
+			{-2, 0},
 		{9999, 10001},
 		{3, 5},
 	}

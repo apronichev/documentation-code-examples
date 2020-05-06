@@ -16,8 +16,8 @@ type User struct {
 
 const (
 	dsn          = "postgres://guest:guest@localhost:54333/guest?sslmode=disable"
-	getUserQuery = "SELECT first_name FROM actor WHERE actor_id = 1;" +
-		"SELECT last_name FROM actor WHERE actor_id = 1;"
+	getUserQuery = "SELECT first_name FROM actor WHERE actor_id = 2;" +
+		"SELECT last_name FROM actor WHERE actor_id = 2;"
 )
 
 func main() {

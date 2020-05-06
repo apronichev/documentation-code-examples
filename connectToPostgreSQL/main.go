@@ -16,7 +16,7 @@ type User struct {
 
 const (
 	dsn       = "postgres://guest:guest@localhost:54333/guest?sslmode=disable"
-	userQuery = "SELECT first_name FROM actor WHERE actor_id = 1;" +
+	userQuery2 = "SELECT first_name FROM actor WHERE actor_id = 1;" +
 		"SELECT last_name FROM actor WHERE actor_id = 1;"
 )
 
@@ -31,7 +31,7 @@ func main() {
 	}
 
 	var firstName []string
-	err = db.Select(&firstName, userQuery)
+	err = db.Select(&firstName, userQuery2)
 	if err != nil {
 		panic(err)
 	}

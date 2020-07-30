@@ -21,7 +21,7 @@ func main() {
 		FirstName: "John",
 		LastName:  "Smith",
 		Password:  "myPassword",
-		IsAdmin:   true,
+		IsAdmin:   false,
 		CreatedAt: time.Now(),
 	}
 	output := createJSON(u)
@@ -35,7 +35,7 @@ func printJSON(output []byte) {
 
 //Generates JSON
 func createJSON(u *User) []byte {
-	output, err := json.MarshalIndent(u, "", "  ")
+	output, err := json.MarshalIndent(u, "", " ")
 	if err != nil {
 		log.Println(err)
 		os.Exit(1)

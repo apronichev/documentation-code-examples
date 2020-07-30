@@ -6,7 +6,7 @@ import "io/ioutil"
 // Click the []byte part in []byte(getData()), press Alt + Enter and select Delete conversion.
 
 func main() {
-	_ = ioutil.WriteFile("./out.txt", []byte(getData()), 0644)
+	_ = ioutil.WriteFile("./out.txt", getData(), 0644)
 }
 
 func getData() []byte {

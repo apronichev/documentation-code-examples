@@ -20,7 +20,7 @@ func TestMultiplyTable(t *testing.T) {
 		input      int
 		wantResult int
 	}{
-		{2, 4},
+		{3, 6},
 		{6, 12},
 		{-2, -4},
 		{9999, 19998},

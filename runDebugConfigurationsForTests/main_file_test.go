@@ -1,18 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
 func CalculateMulitplyTwo(x int) (result int) {
-	result = x * 2
-	return result
-}
-
-func main() {
-	result := CalculateMulitplyTwo(4)
-	fmt.Println(result)
+	return x * 2
 }
 
 func TestMultiplyTable(t *testing.T) {
@@ -33,7 +26,7 @@ func TestMultiplyTable(t *testing.T) {
 	}
 }
 func TestMultiply(t *testing.T) {
-	if CalculateMulitplyTwo(0) != 0 {
-		t.Error("Failed")
+	if CalculateMulitplyTwo(0) != 2 {
+		t.Error("Multiplication by zero must return zero")
 	}
 }

@@ -7,8 +7,7 @@
 </head>
 <body>
 {{range .Users}}
-    <div>Username: {{.Username}} </div>
-    <div>Location: {{.Locations.Home.Street}}</div>
+    <div>{{.Name}}'s address is {{(index .Locations "Home").ZipCode}} {{(index .Locations "Home").Street}}</div>
 {{else}}
     <div>No users found</div>
 {{end}}

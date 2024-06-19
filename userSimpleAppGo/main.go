@@ -24,9 +24,14 @@ func (p *Person) PrintPersonDetails() {
 func (p *Person) formatDetails(city string) string {
 	return fmt.Sprintf("Name: %s, Age: %d, City: %s", p.Name, p.Age, city)
 }
-func (p *Person) CelebrateBirthday() {
+
+const birthdayMessage = "Happy Birthday %s! You are now %d years old.\n"
+
+func (p *Person) celebrateBirthday() {
 	p.Age += 1
-	fmt.Printf("Happy Birthday %s! You are now %d years old.\n", p.Name, p.Age)
+	newAge := p.Age
+	name := p.Name
+	fmt.Printf(birthdayMessage, name, newAge)
 }
 
 func (p *Person) IsAdult() bool {
@@ -35,8 +40,6 @@ func (p *Person) IsAdult() bool {
 
 func main() {
 	person := Person{Name: "John Doe", Age: 25, Address: []string{"123 Main St", "Anytown", "NY"}}
-
-	person.CelebrateBirthday()
 
 	if person.IsAdult() {
 		fmt.Printf("%s is an adult.\n", person.Name)

@@ -16,10 +16,14 @@ type Location struct {
 	State  string
 }
 
-func (p *Person) DisplayDetails() {
-	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, p.Address[1])
+func (p *Person) PrintPersonDetails() {
+	city := p.Address[1]
+	fmt.Println(p.formatDetails(city))
 }
 
+func (p *Person) formatDetails(city string) string {
+	return fmt.Sprintf("Name: %s, Age: %d, City: %s", p.Name, p.Age, city)
+}
 func (p *Person) CelebrateBirthday() {
 	p.Age += 1
 	fmt.Printf("Happy Birthday %s! You are now %d years old.\n", p.Name, p.Age)
@@ -31,8 +35,6 @@ func (p *Person) IsAdult() bool {
 
 func main() {
 	person := Person{Name: "John Doe", Age: 25, Address: []string{"123 Main St", "Anytown", "NY"}}
-
-	person.DisplayDetails()
 
 	person.CelebrateBirthday()
 

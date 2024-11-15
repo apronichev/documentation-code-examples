@@ -1,26 +1,27 @@
-FROM golang:1.14.3-alpine3.11 AS build-env
+# Use a more recent version of Go
+FROM golang:1.21-alpine AS build-env
 
-ENV CGO_ENABLED 0
+ENV CGO_ENABLED=0
 
-# Allow Go to retreive the dependencies for the build step
+# Allow Go to retrieve the dependencies for the build step
 RUN apk add --no-cache git
 
 WORKDIR /debuggingTutorial/
-ADD . /debuggingTutorial/
+COPY . .
 
-RUN go build -o /debuggingTutorial/srv .
+# Build the application
+RUN go build -o /debuggingTutorial/app .
 
-# Get Delve from a GOPATH not from a Go Modules project
-WORKDIR /go/src/
-RUN go get github.com/go-delve/delve/cmd/dlv
+# Install Delve
+RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
-# final stage
-FROM alpine:3.11
+# Final stage
+FROM alpine:3.18
 
 WORKDIR /
-COPY --from=build-env /debuggingTutorial/srv /
+COPY --from=build-env /debuggingTutorial/app /
 COPY --from=build-env /go/bin/dlv /
 
 EXPOSE 8080 40000
 
-CMD ["/dlv", "--listen=:40000", "--headless=true", "--api-version=2", "exec", "/srv"]
+CMD ["/dlv", "--listen=:40000", "--headless=true", "--api-version=2", "exec", "/app"]

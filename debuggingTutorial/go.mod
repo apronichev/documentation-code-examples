@@ -1,8 +1,5 @@
-module main
+module attachToRemoteProcess
 
-require (
-	github.com/gorilla/mux latest
-)
+go 1.21
 
-
-
+require github.com/gorilla/mux v1.8.1
